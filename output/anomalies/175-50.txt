@@ -1,0 +1,20 @@
+K = 175  Threshold = 50
+
+Total Vectors                                :   156962
+
+Vectors found to be abnormal                 :   984
+Vectors found to be normal                   :   155978
+
+Vectors found to be abnormal that were normal:   408
+Vectors found to be normal that were abnormal:   74854
+
+Vectors correctly labeled as abnormal        :   576
+Vectors correctly labeled as normal          :   81124
+
+Accuracy Rate                                :   52.0508%
+
+True Positive Rate                           :    0.7636%
+True Negative Rate                           :   99.4996%
+
+False Positive Rate                          :    0.5004%
+False Negative Rate                          :   99.2364%
