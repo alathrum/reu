@@ -1,2 +1,0 @@
-k,t,Total_Count,Abnormal_Count,Normal_Count,False_Positive_Count,True_Positive_Count,False_Negative_Count,True_Negative_Count,Accuracy_Rate,True_Positive_Rate,False_Positive_Rate,True_Negative_Rate,False_Negative_Rate
-100,150,156578,1341,155237,578,763,74313,80924,52.1701643909106,1.016303479141137,0.709185050673603,99.2908149493264,98.98369652085887

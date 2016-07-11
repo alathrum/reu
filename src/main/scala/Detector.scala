@@ -5,14 +5,14 @@ import org.apache.spark.{SparkConf, SparkContext}
 import org.apache.spark.SparkContext._
 import java.io._
 
-object Test {
+object Detector {
   def main(args: Array[String]) {
-    val file = "test/kddcup/kddcup.data_10" //fix filename
+    val file = "reu/kddcup/kddcup.data_10" //fix filename
 
-    val conf = new SparkConf().setAppName("Test")
+    val conf = new SparkConf().setAppName("Detector")
     val sc = new SparkContext(conf)
 
-    val csvfile = s"test//output//csv//allData.csv"  //fix file name
+    val csvfile = s"reu//output//csv//allData.csv"  //fix file name
     val csv = new PrintWriter(new File(csvfile)) 
     csv.println("k,t,Total_Count,Abnormal_Count,Normal_Count,False_Positive_Count,True_Positive_Count,False_Negative_Count,True_Negative_Count,Accuracy_Rate,True_Positive_Rate,False_Positive_Rate,True_Negative_Rate,False_Negative_Rate")
     csv.flush()
@@ -21,7 +21,7 @@ object Test {
     val parse = catAndLab(allRaw)
     val allData = allRaw.map(line => (line, parse(line)._2))
 
-    anomalyDetector(allData, 100, 50, csv)
+    anomalyDetector(allData, 150, 100, csv)
 /*    anomalyDetector(allData, 100, 100, csv)
     anomalyDetector(allData, 100, 150, csv)
     anomalyDetector(allData, 125, 50, csv)
@@ -149,7 +149,7 @@ object Test {
 
   def findStats(abnormal: RDD[String],normal: RDD[String],k: Int, t: Int, csv: PrintWriter) = {
 
-    val file = s"test//output//anomalies//$k-$t.txt" //fix file name
+    val file = s"reu//output//anomalies//$k-$t.txt" //fix file name
     val output = new PrintWriter(new File(file))
     output.println(s"K = $k  Threshold = $t")
 
